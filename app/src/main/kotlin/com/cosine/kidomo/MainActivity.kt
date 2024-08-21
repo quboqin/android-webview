@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity()
 		}
 	}
 
-	private fun askNotificationPermission() {
+	private fun AskNotificationPermission() {
 		// This is only necessary for API level >= 33 (TIRAMISU)
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
 			if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
@@ -91,7 +91,7 @@ class MainActivity : ComponentActivity()
 
 		// Setup the view using Jetpack Compose.
 		setContent {
-			askNotificationPermission()
+			AskNotificationPermission()
 			// Check to see if we have the appropriate permissions.
 			ConditionallyRequestPermission(Manifest.permission.CAMERA)
 			{

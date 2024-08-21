@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
  * @property webView
  *   The [WebView] that the web app is running in.
  */
-class ExampleJavascriptAPI constructor(
+class KidomoJavascriptAPI constructor(
 	private val uiScope: CoroutineScope =
 		CoroutineScope(Dispatchers.Main + SupervisorJob()),
 	private val webView: WebView)
@@ -94,6 +94,24 @@ class ExampleJavascriptAPI constructor(
 	/**
 	 * Instruct the [webView] to save its state to `window.localStorage`.
 	 */
+	internal fun injectOS ()
+	{
+		evaluateJS("window.kidomo_platform = 'android'")
+		{
+			Log.d("InjectOS", "Injecting OS...")
+			runOnUiThread {
+				Toast.makeText(
+					WebApp.app,
+					"Injecting OS",
+					Toast.LENGTH_LONG
+				).show()
+			}
+		}
+	}
+
+	/**
+	 * Instruct the [webView] to save its state to `window.localStorage`.
+	 */
 	internal fun saveState ()
 	{
 		evaluateJS("saveState();")
@@ -139,8 +157,8 @@ class ExampleJavascriptAPI constructor(
 	companion object
 	{
 		/**
-		 * The logging tag for [ExampleJavascriptAPI].
+		 * The logging tag for [KidomoJavascriptAPI].
 		 */
-		private val TAG = ExampleJavascriptAPI::class.java.simpleName
+		private val TAG = KidomoJavascriptAPI::class.java.simpleName
 	}
 }

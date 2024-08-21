@@ -308,6 +308,13 @@ fun WebViewContent (
 			}
 			savedBundle = bundle
 		}
+
+		val injectOS: (() -> Unit) -> Unit = {
+			webView?.apply {
+				nativeAndroidAPI.jsAPI.injectOS()
+			}
+		}
+
 		// Add a lifecycle observer to react accordingly to lifecycle events.
 		val statePreservingObserver = LifecycleEventObserver { _, event ->
 			Log.d("DisposableEffect", "Event occurring: ${event.name}")
@@ -326,8 +333,9 @@ fun WebViewContent (
 					webView?.removeJavascriptInterface(
 						ExampleNativeAndroidAPI::class.java.simpleName)
 				}
+				ON_CREATE -> injectOS {}
 				// Nothing needed on these events
-				ON_CREATE, ON_RESUME, ON_START, ON_ANY -> {}
+				ON_RESUME, ON_START, ON_ANY -> {}
 			}
 		}
 

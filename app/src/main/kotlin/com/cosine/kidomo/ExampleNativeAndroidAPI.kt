@@ -42,12 +42,12 @@ class ExampleNativeAndroidAPI constructor(
 		uiScope.launch { action() }
 
 	/**
-	 * The [ExampleJavascriptAPI] that exposes Javascript API functions that are
+	 * The [KidomoJavascriptAPI] that exposes Javascript API functions that are
 	 * evaluated in the [webView] that are callable from the Android side of
 	 * the wall.
 	 */
-	internal val jsAPI: ExampleJavascriptAPI =
-		ExampleJavascriptAPI(uiScope, webView)
+	internal val jsAPI: KidomoJavascriptAPI =
+		KidomoJavascriptAPI(uiScope, webView)
 
 	/**
 	 * Send the [APIResponse] to the [webView].
@@ -131,7 +131,7 @@ class ExampleNativeAndroidAPI constructor(
 	}
 
 	/**
-	 * Calls an API defined in the Javascript, [ExampleJavascriptAPI.jsConcat].
+	 * Calls an API defined in the Javascript, [KidomoJavascriptAPI.jsConcat].
 	 *
 	 * This demonstrates how a native Android code can call a function defined
 	 * in the Javascript in the web app running in the [WebView].
