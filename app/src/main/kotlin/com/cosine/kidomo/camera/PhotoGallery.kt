@@ -1,4 +1,4 @@
-package com.bitwisearts.example.camera
+package com.cosine.kidomo.camera
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult

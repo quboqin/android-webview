@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.bitwisearts.example"
+    namespace = "com.cosine.kidomo"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.bitwisearts.example"
+        applicationId = "com.cosine.kidomo"
         minSdk = 29
         targetSdk = 33
         versionCode=  1

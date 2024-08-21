@@ -1,4 +1,4 @@
-package com.bitwisearts.example.barcode
+package com.cosine.kidomo.barcode
 
 import android.Manifest
 import androidx.camera.core.CameraSelector
@@ -23,10 +23,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
-import com.bitwisearts.example.*
-import com.bitwisearts.example.camera.CameraAction
-import com.bitwisearts.example.camera.ControlButton
-import com.bitwisearts.example.camera.getProcessCameraProvider
+import com.cosine.kidomo.*
+import com.cosine.kidomo.camera.CameraAction
+import com.cosine.kidomo.camera.ControlButton
+import com.cosine.kidomo.camera.getProcessCameraProvider
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.common.Barcode
 

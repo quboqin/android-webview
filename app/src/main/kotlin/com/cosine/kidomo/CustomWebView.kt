@@ -1,4 +1,4 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -141,7 +141,7 @@ fun appWebView (
 
 /**
  * Create a custom [WebViewClient]. It is responsible for most of the
- * actions that occur inside a WebView. For example allows you to
+ * actions that occur inside a WebView. For com.cosine.kidomo allows you to
  *  - intercept url requests for special handling
  *  - dictate where a URL is loaded (in WebView or the default browser)
  *  - What to do for certain events like onPageFinished, onReceivedSslError,
@@ -203,7 +203,7 @@ private fun webViewClient() = object : WebViewClient()
 			"WebViewExample",
 			"The WebView rendering process crashed!"
 		)
-		// In this example, the app itself crashes after detecting that
+		// In this com.cosine.kidomo, the app itself crashes after detecting that
 		// the renderer crashed. If you choose to handle the crash more
 		// gracefully and allow your app to continue executing, you
 		// should:

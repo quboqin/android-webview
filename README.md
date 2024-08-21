@@ -10,15 +10,15 @@ This app uses [Android JetPack Compose](https://developer.android.com/jetpack/co
 This example Android app demonstrates:
 
  1. The setup of a mobile web app provided through `WebView` using [Jetpack Compose](https://developer.android.com/jetpack).
- 2. Exposing a native [Android API](app/src/main/kotlin/com/bitwisearts/example/ExampleNativeAndroidAPI.kt) that is callable from the web app
- 3. Exposing a [Javascript](app/src/main/kotlin/com/bitwisearts/example/ExampleJavascriptAPI.kt) API that is callable from native Android code.
+ 2. Exposing a native [Android API](app/src/main/kotlin/com/cosine/kidomo/ExampleNativeAndroidAPI.kt) that is callable from the web app
+ 3. Exposing a [Javascript](app/src/main/kotlin/com/cosine/kidomo/ExampleJavascriptAPI.kt) API that is callable from native Android code.
  4. A server-client message passing protocol between the web app and the native 
     Android code allowing for asynchronous communication.
  5. Managing `WebView` state in the presence of the [Android Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle). 
 
 ## How to Navigate Example
 All example code is well documented. Begin by exploring
-[`com.bitwisearts.example.MainActivity`](app/src/main/kotlin/com/bitwisearts/example/MainActivity.kt).
+[`com.cosine.kidomo.MainActivity`](app/src/main/kotlin/com/cosine/kidomo/MainActivity.kt).
 
 ## Web App
 The web app is a plain HTML and Javascript application placed in 
@@ -38,7 +38,7 @@ on themes nor any real work on UI/UX other than what is needed to demonstrate a
 way to deliver a hybrid app. 
 
 The native API exposed to Javascript is located in 
-[`ExampleNativeAndroidAPI`](app/src/main/kotlin/com/bitwisearts/example/ExampleNativeAndroidAPI.kt).
+[`ExampleNativeAndroidAPI`](app/src/main/kotlin/com/cosine/kidomo/ExampleNativeAndroidAPI.kt).
 
 It utilizes coroutines to execute asynchronous code. Note that all calls to 
 execute Javascript code from native Android must be done on the UI thread.
@@ -76,14 +76,14 @@ permissions used by this example application.
 Additionally, some permissions must be granted by the user. Requesting this
 permission is handled by the `Composable` function, 
 `ConditionallyRequestPermission`. This function is defined at the bottom of
-[`MainActivity`](app/src/main/kotlin/com/bitwisearts/example/MainActivity.kt).
+[`MainActivity`](app/src/main/kotlin/com/cosine/kidomo/MainActivity.kt).
 
 ## Preserve State
 If the state is not actively preserved, the `WebView` will be reset to the start
 page on events such as a screen rotation or a change in the size of the screen.
 
 A `LifecycleEventObserver` is added to manage the saving of `WebView` state. This
-can be found in [CustomWebView](app/src/main/kotlin/com/bitwisearts/example/CustomWebView.kt).
+can be found in [CustomWebView](app/src/main/kotlin/com/cosine/kidomo/CustomWebView.kt).
 
 Using a mix of Android [`Bundle`](https://developer.android.com/reference/android/os/Bundle) 
 and [`Window.localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
@@ -121,7 +121,7 @@ asynchronously survive lifecycle events.
 (*see [Preserve State](#preserve-state)*)
 
 The web app manages asynchronous requests through [`AndroidAPIRequests`](app/src/main/assets/js/app.js)
-that are stored in `AppDataContext.conversations`. See [`ApiMessages`](app/src/main/kotlin/com/bitwisearts/example/ApiMessages.kt)
+that are stored in `AppDataContext.conversations`. See [`ApiMessages`](app/src/main/kotlin/com/cosine/kidomo/ApiMessages.kt)
 to see how the native Android code handles asynchronous API requests from the
 web app.
 
@@ -152,7 +152,7 @@ utilities, such as the camera or a barcode scanner, depending on how they are
 launched, may cause the `WebView` to be destroyed.
 
 For this example, we use option 1 from above. We use the `Application` subclass
-[`WebApp`](app/src/main/kotlin/com/bitwisearts/example/WebApp.kt) to manage
+[`WebApp`](app/src/main/kotlin/com/cosine/kidomo/WebApp.kt) to manage
 async message state in the field, `WebApp.responseQueue`. The comment for this
 field indicates better solutions than this, but for this example, it is "*good
 enough*".

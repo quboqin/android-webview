@@ -1,4 +1,4 @@
-package com.bitwisearts.example.barcode
+package com.cosine.kidomo.barcode
 
 import com.google.mlkit.vision.barcode.common.Barcode
 

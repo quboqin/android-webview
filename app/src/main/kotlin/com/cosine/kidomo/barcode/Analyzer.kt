@@ -1,4 +1,4 @@
-package com.bitwisearts.example.barcode
+package com.cosine.kidomo.barcode
 
 import android.annotation.SuppressLint
 import androidx.camera.core.ImageAnalysis

@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "webview-example"
+rootProject.name = "webview-kidomo"
 include(":app")

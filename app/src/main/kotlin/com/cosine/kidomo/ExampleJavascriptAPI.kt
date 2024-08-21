@@ -1,4 +1,4 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import android.util.Log
 import android.webkit.WebView
@@ -38,7 +38,7 @@ class ExampleJavascriptAPI constructor(
 
 
 	/**
-	 * An example of asynchronously evaluating Javascript code in the [webView].
+	 * An com.cosine.kidomo of asynchronously evaluating Javascript code in the [webView].
 	 *
 	 * This just runs generic, globally available Javascript, and changes the
 	 * color of the text to red.

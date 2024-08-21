@@ -1,4 +1,4 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import android.webkit.WebView
 import androidx.lifecycle.ViewModel

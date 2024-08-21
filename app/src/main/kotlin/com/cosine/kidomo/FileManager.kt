@@ -1,4 +1,4 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import java.io.File
 

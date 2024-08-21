@@ -1,4 +1,4 @@
-package com.bitwisearts.example.ui
+package com.cosine.kidomo.ui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

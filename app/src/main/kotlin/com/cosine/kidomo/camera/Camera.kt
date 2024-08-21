@@ -1,4 +1,4 @@
-package com.bitwisearts.example.camera
+package com.cosine.kidomo.camera
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -37,8 +37,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
-import com.bitwisearts.example.*
-import com.bitwisearts.example.R
+import com.cosine.kidomo.*
+import com.cosine.kidomo.R
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 

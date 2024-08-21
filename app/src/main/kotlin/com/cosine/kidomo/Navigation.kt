@@ -1,4 +1,4 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import android.webkit.WebView
 import androidx.compose.runtime.*
@@ -9,13 +9,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.bitwisearts.example.barcode.Scanner
-import com.bitwisearts.example.camera.Camera
-import com.bitwisearts.example.camera.CameraView
+import com.cosine.kidomo.barcode.Scanner
+import com.cosine.kidomo.camera.Camera
+import com.cosine.kidomo.camera.CameraView
 
 /**
  * The enumeration of the different [Composable]s that can be navigated to in
- * this example application.
+ * this com.cosine.kidomo application.
  */
 @Suppress("EnumEntryName")
 enum class NavRoutes

@@ -1,11 +1,11 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import com.bitwisearts.example.camera.Camera
+import com.cosine.kidomo.camera.Camera
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

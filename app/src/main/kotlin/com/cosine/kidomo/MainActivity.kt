@@ -1,4 +1,4 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -14,7 +14,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
-import com.bitwisearts.example.ui.ExampleAppTheme
+import com.cosine.kidomo.ui.ExampleAppTheme
 
 /**
  * The singular [ComponentActivity] that is used to display the web app inside

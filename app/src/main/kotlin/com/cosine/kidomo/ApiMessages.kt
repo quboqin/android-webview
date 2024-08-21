@@ -1,8 +1,8 @@
-package com.bitwisearts.example
+package com.cosine.kidomo
 
 import android.webkit.WebView
-import com.bitwisearts.example.barcode.Format
-import com.bitwisearts.example.barcode.Type
+import com.cosine.kidomo.barcode.Format
+import com.cosine.kidomo.barcode.Type
 import org.availlang.json.JSONFriendly
 import org.availlang.json.JSONWriter
 import org.availlang.json.jsonPrettyPrintWriter
