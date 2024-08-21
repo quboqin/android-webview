@@ -24,6 +24,8 @@ plugins {
     // Kotlin Android plugin.
     // https://plugins.gradle.org/plugin/org.jetbrains.kotlin.android
     id ("org.jetbrains.kotlin.android") version "1.8.10" apply false
+
+    id("com.google.gms.google-services") version "4.4.2" apply false
 }
 
 tasks {
