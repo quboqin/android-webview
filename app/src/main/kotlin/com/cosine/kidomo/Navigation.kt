@@ -56,7 +56,7 @@ fun AppNavHost(
 			val backHandlerEnabled =
 				remember { mutableStateOf(true) }
 			WebViewContent(
-				url = "https://m-saas.opsfast.com",
+				url = BuildConfig.WEB_APP_URL,
 				navController = navController,
 				backHandlerEnabled = backHandlerEnabled)
 		}

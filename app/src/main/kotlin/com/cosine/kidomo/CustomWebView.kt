@@ -42,14 +42,14 @@ class CustomWebView(
 	 * be called by Javascript running in this [CustomWebView]. These functions
 	 * are evaluated on the Android side of the wall.
 	 */
-	val nativeAndroidAPI: ExampleNativeAndroidAPI = ExampleNativeAndroidAPI(
+	val nativeAndroidAPI: NativeAndroidAPI = NativeAndroidAPI(
 		CoroutineScope(Dispatchers.Main + SupervisorJob()),
 		model,
 		this,
 		navController)
 
 	/**
-	 * Expose the [ExampleNativeAndroidAPI] to this [CustomWebView].
+	 * Expose the [NativeAndroidAPI] to this [CustomWebView].
 	 */
 	internal fun exposeAndroidAPI ()
 	{
@@ -58,7 +58,7 @@ class CustomWebView(
 		// provides the name of the interface in Javascript that the functions
 		// are callable through.
 		addJavascriptInterface(
-			nativeAndroidAPI, ExampleNativeAndroidAPI::class.java.simpleName)
+			nativeAndroidAPI, NativeAndroidAPI::class.java.simpleName)
 	}
 }
 
@@ -331,7 +331,7 @@ fun WebViewContent (
 				ON_DESTROY -> saveState {
 					// We want to disable/cleanup the Android Native API.
 					webView?.removeJavascriptInterface(
-						ExampleNativeAndroidAPI::class.java.simpleName)
+						NativeAndroidAPI::class.java.simpleName)
 				}
 				ON_CREATE -> injectOS {}
 				// Nothing needed on these events

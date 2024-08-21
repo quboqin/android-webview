@@ -1,5 +1,6 @@
 package com.cosine.kidomo
 
+import android.util.Log
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import android.widget.Toast
@@ -10,6 +11,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import org.json.JSONException
+import org.json.JSONObject
 
 /**
  * Contains the native Android API callable from a [WebView].
@@ -25,7 +30,7 @@ import kotlinx.coroutines.launch
  * @property navController
  *   The [NavController] used for application navigation.
  */
-class ExampleNativeAndroidAPI constructor(
+class NativeAndroidAPI constructor(
 	private val uiScope: CoroutineScope =
 		CoroutineScope(Dispatchers.Main + SupervisorJob()),
 	private val model: WebViewModel,
@@ -211,6 +216,43 @@ class ExampleNativeAndroidAPI constructor(
 		runOnUiThread {
 			navController.navigate(
 				"${NavRoutes.scanner.name}/${conversationId}")
+		}
+	}
+
+	@JavascriptInterface
+	@Suppress("unused")
+	fun callFromJavascript(jsonString: String) {
+		val gson = Gson()
+		val type = object : TypeToken<Map<String, Any>>() {}.type
+		val jsonObject: Map<String, Any> = gson.fromJson(jsonString, type)
+
+		val action = jsonObject["action"] as? String
+
+		when (action) {
+			"back" -> { }
+
+			"set_header" -> {
+				Log.d("NativeAndroidAPI","jsonString = $jsonString")
+				try {
+					val authObject = jsonObject["params"] as? Map<*, *>
+
+					val bladeAuth = authObject?.get("BladeAuth") as String
+					val authorization = authObject["Authorization"] as String
+
+					val preferenceHelper =
+						PreferenceHelper<Token>(WebApp.app, "KidomoPreferences", "TokenKey")
+					val retrievedHeader: Token? = preferenceHelper.getObject(Token::class.java)
+
+					val networkHelper = NetworkHelper(WebApp.app)
+					retrievedHeader?.Token?.let { networkHelper.sendTokenUpdateRequest(it, bladeAuth, authorization) }
+				} catch (e: JSONException) {
+					e.printStackTrace()
+				}
+			}
+
+			else -> {
+				return
+			}
 		}
 	}
 

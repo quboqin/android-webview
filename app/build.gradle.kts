@@ -21,7 +21,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "ENDPOINT", "\"https://saas-test.opsfast.com/api/blade-common/firebase-token/update-token?\"")
+            buildConfigField("String", "WEB_APP_URL", "\"https://m-saas.opsfast.com\"")
+        }
         release {
+            buildConfigField("String", "ENDPOINT", "\"https://console.kidomo.app/api/blade-common/firebase-token/update-token?\"")
+            buildConfigField("String", "WEB_APP_URL", "\"https://m.kidomo.app\"")
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -89,4 +95,8 @@ dependencies {
 //    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
 //    implementation("com.google.firebase:firebase-common-ktx:21.0.0")
     implementation("com.google.firebase:firebase-messaging-ktx:24.0.0")
+
+    implementation("com.google.code.gson:gson:2.8.9")
+
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
 }
