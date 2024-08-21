@@ -11,7 +11,7 @@ import com.google.mlkit.vision.common.InputImage
 /**
  * An [ImageAnalysis.Analyzer] used to analyze [Barcode]s.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @property options
  *   The [BarcodeScannerOptions] if specified; `null` otherwise.
@@ -58,7 +58,7 @@ class BarcodeAnalyzer constructor (
 /**
  * The abstract [Barcode] format.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @property id
  *   Uniquely identifies the format.
@@ -227,7 +227,7 @@ sealed class Format constructor (val id: Int)
 /**
  * The abstract information type of the [Barcode].
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @property id
  *   The id that uniquely identifies the [Type].

@@ -5,7 +5,7 @@ import com.google.mlkit.vision.barcode.common.Barcode
 /**
  * Handles the result of an attempt to scan a barcode.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  */
 interface ScanHandler
 {

@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
  *  1. Globally eval capable Javascript; or
  *  2. Javascript functions defined in the web app loaded from the assets folder
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @property uiScope
  *   The UI [CoroutineScope] that enables running tasks on the UI thread.

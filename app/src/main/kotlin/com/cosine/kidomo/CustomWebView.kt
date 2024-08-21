@@ -24,7 +24,7 @@ import kotlinx.coroutines.SupervisorJob
 /**
  * The custom [WebView] for this application.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @property model
  *   The active [WebViewModel].

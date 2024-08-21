@@ -19,7 +19,7 @@ import org.json.JSONObject
 /**
  * Contains the native Android API callable from a [WebView].
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @property uiScope
  *   The UI [CoroutineScope] that enables running tasks on the UI thread.

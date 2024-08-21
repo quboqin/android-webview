@@ -5,7 +5,7 @@ import java.io.File
 /**
  * A class that provides simple wrappers for device file management.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @constructor
  * Construct the [FileManager]

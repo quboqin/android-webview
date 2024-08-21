@@ -48,7 +48,7 @@ enum class MessageType
 /**
  * A [JSONFriendly] that is a response to a native Android API request.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  */
 abstract class APIResponse: JSONFriendly
 {

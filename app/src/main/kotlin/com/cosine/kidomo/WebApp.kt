@@ -8,7 +8,7 @@ import java.util.*
 /**
  * The backing [Application] for this com.cosine.kidomo Android app.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  */
 class WebApp: Application()
 {

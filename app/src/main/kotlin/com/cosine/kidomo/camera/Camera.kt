@@ -161,7 +161,7 @@ fun ControlButton(
  * Encapsulates the state necessary to draw the camera controls in the camera
  * view.
  *
- * @author Richard Arriaga
+ * @author Qubo Qin
  *
  * @property buttonIconSize
  *   The icon control button size in [Dp] for each control button.
